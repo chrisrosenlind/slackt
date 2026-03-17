@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "start": "node src/main.ts"
+    "start": "tsx src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/chrisrosenlind/slackt/issues"
   },
-  "homepage": "https://github.com/chrisrosenlind/slackt#readme"
+  "homepage": "https://github.com/chrisrosenlind/slackt#readme",
+  "dependencies": {
+    "tsx": "^4.21.0"
+  }
 }
