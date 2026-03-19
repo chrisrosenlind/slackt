@@ -14,7 +14,7 @@ export class Client {
     });
 
     this.ws.addEventListener("message", (event) => {
-      console.log("Received:", event.data);
+      console.log("Received: ", event.data);
     });
 
     this.ws.addEventListener("close", () => {
