@@ -1,13 +1,23 @@
+type ClientProps = {
+  token: string;
+  url: string;
+};
+
 export class Client {
   private ws?: WebSocket;
+  private url: string;
+  private token: string;
 
-  constructor() {
-    const url = process.env.URL;
-    if (!url) {
-      throw new Error("Missing WebSocket url");
-    }
+  constructor({ token, url }: ClientProps) {
+    if (!url) throw new Error("Missing WebSocket url");
+    if (!token) throw new Error("Missing Slack token");
 
-    this.ws = new WebSocket(url);
+    this.token = token;
+    this.url = url;
+  }
+
+  connect() {
+    this.ws = new WebSocket(this.url, this.token);
 
     this.ws.addEventListener("open", () => {
       console.log("WebSocket connection open");
